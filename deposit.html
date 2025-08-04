@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Portal - Deposit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="mobile-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="dashboard">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://managment.io/img/logo.svg" alt="Management Logo">
+            </div>
+            <div class="user-info">
+                <div class="user-logo">
+                    <img id="userLogoImg" src="" alt="User Logo">
+                </div>
+                <div class="user-name" id="userName"></div>
+                <div class="user-status" id="userStatus"></div>
+            </div>
+            <div class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="withdrawal.html" class="menu-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Withdrawal</span>
+                </a>
+                <a href="deposit.html" class="menu-item active">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Deposit</span>
+                </a>
+                <a href="commission.html" class="menu-item">
+                    <i class="fas fa-percentage"></i>
+                    <span>Commission</span>
+                </a>
+                <a href="#" class="menu-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-header">
+                <h1>Deposit Transactions</h1>
+                <p>Manage deposit requests from users</p>
+            </div>
+
+            <div class="recent-transactions">
+                <div class="section-header">
+                <h2>Deposit Transactions</h2>
+                <div class="filter-controls">
+                    <select id="statusFilter" class="filter-select">
+                        <option value="all">All Transactions</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+                <div class="table-responsive">
+                    <table class="transaction-table" id="depositTable">
+                        <thead>
+                            <tr>
+                                <th>Transaction #</th>
+                                <th>TRX ID</th>
+                                <th>Method</th>
+                                <th>User ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="depositTableBody">
+                            <!-- Deposit transactions will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Detail Modal -->
+    <div class="modal" id="transactionModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <h2>Deposit Details</h2>
+            </div>
+            <div class="transaction-details" id="transactionDetails">
+                <!-- Transaction details will be loaded here -->
+            </div>
+            <div id="rejectionReasonContainer" style="display: none;">
+                <label for="rejectionReason">Reason:</label>
+                <input type="text" id="rejectionReason" class="trx-input" placeholder="Enter reason for rejection">
+            </div>
+            <div class="modal-actions" id="modalActions">
+                <!-- Action buttons will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="js/security-payment.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/maintenance.js"></script>
+    <script src="js/deposit.js"></script>
+</body>
+</html>

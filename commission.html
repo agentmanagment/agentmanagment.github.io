@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Portal - Commission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="mobile-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="dashboard">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://managment.io/img/logo.svg" alt="Management Logo">
+            </div>
+            <div class="user-info">
+                <div class="user-logo">
+                    <img id="userLogoImg" src="" alt="User Logo">
+                </div>
+                <div class="user-name" id="userName"></div>
+                <div class="user-status" id="userStatus"></div>
+            </div>
+            <div class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="withdrawal.html" class="menu-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Withdrawal</span>
+                </a>
+                <a href="deposit.html" class="menu-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Deposit</span>
+                </a>
+                <a href="commission.html" class="menu-item active">
+                    <i class="fas fa-percentage"></i>
+                    <span>Commission</span>
+                </a>
+                <a href="#" class="menu-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-header">
+                <h1>Commission</h1>
+                <p>View your commission rates and earnings</p>
+            </div>
+
+            <div class="commission-info">
+                <div class="section-header">
+                    <h2>Commission Rates</h2>
+                </div>
+                <div class="commission-rates">
+                    <div class="commission-card">
+                        <h3>Withdrawal Commission</h3>
+                        <div class="commission-rate">5%</div>
+                    </div>
+                    <div class="commission-card">
+                        <h3>Deposit Commission</h3>
+                        <div class="commission-rate">3%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="commission-info total-commission">
+                <div class="section-header">
+                    <h2>Total Commission</h2>
+                </div>
+                <div class="commission-total-card">
+                    <div class="commission-total" id="totalCommission">0.00</div>
+                    <div class="commission-note">Every 24 hours your commission automatically transfers to your account if it exceeds $100 in value.</div>
+                    <button class="action-btn view-btn" id="withdrawCommissionBtn">Withdraw Commission</button>
+                </div>
+            </div>
+
+            <div class="commission-info commission-history">
+                <div class="section-header">
+                    <h2>Commission Earnings</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="transaction-table" id="commissionTable">
+                        <thead>
+                            <tr>
+                                <th>Transaction #</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Currency</th>
+                                <th>Commission</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="commissionTableBody">
+                            <!-- Commission transactions will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="js/security-payment.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/maintenance.js"></script>
+    <script src="js/commission.js"></script>
+</body>
+</html>
